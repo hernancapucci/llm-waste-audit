@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-waste-audit"
+version = "0.1.0"
+description = "Audit tool for avoidable LLM waste"
+requires-python = ">=3.10"
+dependencies = ["pydantic>=2.0", "rich>=13.0"]
+
+[project.scripts]
+llm-waste-audit = "cli.main:main"
