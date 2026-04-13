@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+env/
+waste_report.md
+.DS_Store
