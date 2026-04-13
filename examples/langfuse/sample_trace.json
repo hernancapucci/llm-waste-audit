@@ -1,0 +1,48 @@
+{
+  "trace_id": "trace_20260413_0907",
+  "timestamp": "2026-04-13T09:07:00Z",
+  "input": {
+    "model": "gpt-5.1-chat-latest",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Eres un asistente técnico experto. Fecha actual: 2026-04-13 09:07 AM. Request ID: req-xyz789abc. Siempre responde en formato JSON estructurado."
+      },
+      {
+        "role": "user",
+        "content": "Analiza el siguiente código y sugiere mejoras de rendimiento."
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "get_code_metrics",
+          "description": "Obtiene métricas detalladas de rendimiento, complejidad ciclomática, uso de memoria y sugerencias de optimización para un fragmento de código proporcionado.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "code": { "type": "string" },
+              "language": { "type": "string" }
+            },
+            "required": ["code"]
+          }
+        }
+      },
+      {
+        "type": "function",
+        "function": {
+          "name": "run_unit_tests",
+          "description": "Ejecuta tests unitarios en el código y devuelve resultados detallados con cobertura.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "code_snippet": { "type": "string" },
+              "test_framework": { "type": "string" }
+            }
+          }
+        }
+      }
+    ]
+  }
+}
